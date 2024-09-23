@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/pandoraizida/qa-auto-engineer-javascript-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/pandoraizida/qa-auto-engineer-javascript-project-44/actions)",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+  "brain-games": "bin/brain-games.js"
+},
   "author": "e.kochetova",
   "license": "ISC"
 }
