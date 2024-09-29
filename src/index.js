@@ -1,31 +1,47 @@
 import readlineSync from 'readline-sync';
 import rundomNum from './games/even.js';
 import { getExpression, calculateCorrectAnswer } from './games/calc.js';
+import { getNumbers, getGCD } from './games/gcd.js';
 
 const getGameCondition = (gameType) => {
-  if (gameType === 1) {
-    console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  } else {
-    console.log('What is the result of the expression?');
+  switch (gameType) {
+    case 1:
+      console.log('Answer "yes" if the number is even, otherwise answer "no".');
+      break;
+    case 2:
+      console.log('What is the result of the expression?');
+      break;
+    default:
+      console.log('Find the greatest common divisor of given numbers.');
   }
 };
 
 const getDataForQuestion = (gameType) => {
   let dataForQuestion;
-  if (gameType === 1) {
-    dataForQuestion = rundomNum(0, 100);
-  } else {
-    dataForQuestion = getExpression();
+  switch (gameType) {
+    case 1:
+      dataForQuestion = rundomNum(0, 100);
+      break;
+    case 2:
+      dataForQuestion = getExpression();
+      break;
+    default:
+      dataForQuestion = getNumbers();
   }
   return dataForQuestion;
 };
 
 const getCorrectAnswer = (gameType, expr) => {
   let correctAnswerData = '';
-  if (gameType === 1) {
-    correctAnswerData = ((expr % 2 === 0) ? 'yes' : 'no');
-  } else {
-    correctAnswerData = (calculateCorrectAnswer(expr)).toString();
+  switch (gameType) {
+    case 1:
+      correctAnswerData = ((expr % 2 === 0) ? 'yes' : 'no');
+      break;
+    case 2:
+      correctAnswerData = (calculateCorrectAnswer(expr)).toString();
+      break;
+    default:
+      correctAnswerData = (getGCD(expr)).toString();
   }
   return correctAnswerData;
 };
