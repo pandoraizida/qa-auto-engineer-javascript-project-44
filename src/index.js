@@ -2,6 +2,7 @@ import readlineSync from 'readline-sync';
 import rundomNum from './games/even.js';
 import { getExpression, calculateCorrectAnswer } from './games/calc.js';
 import { getNumbers, getGCD } from './games/gcd.js';
+import { getNumberLine, getMissedNumber } from './games/progression.js';
 
 const getGameCondition = (gameType) => {
   switch (gameType) {
@@ -11,8 +12,11 @@ const getGameCondition = (gameType) => {
     case 2:
       console.log('What is the result of the expression?');
       break;
-    default:
+    case 3:
       console.log('Find the greatest common divisor of given numbers.');
+      break;
+    default:
+      console.log('What number is missing in the progression?');
   }
 };
 
@@ -25,8 +29,11 @@ const getDataForQuestion = (gameType) => {
     case 2:
       dataForQuestion = getExpression();
       break;
-    default:
+    case 3:
       dataForQuestion = getNumbers();
+      break;
+    default:
+      dataForQuestion = getNumberLine();
   }
   return dataForQuestion;
 };
@@ -40,8 +47,11 @@ const getCorrectAnswer = (gameType, expr) => {
     case 2:
       correctAnswerData = (calculateCorrectAnswer(expr)).toString();
       break;
-    default:
+    case 3:
       correctAnswerData = (getGCD(expr)).toString();
+      break;
+    default:
+      correctAnswerData = (getMissedNumber(expr)).toString();
   }
   return correctAnswerData;
 };
