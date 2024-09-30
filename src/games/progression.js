@@ -1,22 +1,57 @@
-import rundomNumber from './even.js';
+import playGame from '../index.js';
+import rundomNumber from '../helper.js';
+
+const step = 5;
+const rowLength = 10;
 
 export const getNumberLine = () => {
   let number = rundomNumber(0, 100);
-  const step = 5;
-  const len = 10;
   const mass = [];
-  for (let i = 0; i < len; i += 1) {
+  for (let i = 0; i < rowLength; i += 1) {
     mass.push(number);
     number += step;
   }
-  mass[(rundomNumber(0, 9))] = '..';
+  mass[(rundomNumber(0, rowLength - 1))] = '..';
   const result = mass.join(' ');
   return result;
 };
 
 export const getMissedNumber = (expr) => {
   const mass = expr.split(' ');
-  const step = 5;
-  const result = mass[mass.indexOf('..') + 1] - step;
+  const ind = mass.indexOf('..');
+  let result = 0;
+  if (ind === rowLength - 1) {
+    result = Number(mass[rowLength - 2]) + step;
+  } else {
+    result = Number(mass[ind + 1]) - step;
+  }
   return result;
 };
+
+const progressionGame = () => {
+  const getGameCondition = () => {
+    console.log('What number is missing in the progression?');
+  };
+
+  const getDataForQuestion = () => {
+    const dataForQuestion = getNumberLine();
+    return dataForQuestion;
+  };
+
+  const getCorrectAnswer = (expr) => {
+    let correctAnswerData = '';
+    correctAnswerData = getMissedNumber(expr).toString();
+    return correctAnswerData;
+  };
+  return {
+    getDataForQuestion,
+    getCorrectAnswer,
+    getGameCondition,
+  };
+};
+
+const runBrainProgression = () => {
+  playGame(progressionGame());
+};
+
+export default runBrainProgression;
