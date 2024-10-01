@@ -1,5 +1,5 @@
 import playGame from '../index.js';
-import rundomNumber from '../helper.js';
+import { rundomNumber } from '../helper.js';
 
 const rundomOperator = () => {
   const operatorPool = ['+', '-', '*'];
@@ -7,12 +7,12 @@ const rundomOperator = () => {
   return rand;
 };
 
-const getExpression = () => {
+export const getExpression = () => {
   const expression = (`${rundomNumber(0, 100)} ${rundomOperator()} ${rundomNumber(0, 100)}`);
   return expression;
 };
 
-const calculateCorrectAnswer = (expr) => {
+export const calculateCorrectAnswer = (expr) => {
   const actions = {
     '+': (a, b) => a + b,
     '-': (a, b) => a - b,
@@ -31,30 +31,8 @@ const calculateCorrectAnswer = (expr) => {
   return result;
 };
 
-const calcGame = () => {
-  const getGameCondition = () => {
-    console.log('What is the result of the expression?');
-  };
-
-  const getDataForQuestion = () => {
-    const dataForQuestion = getExpression();
-    return dataForQuestion;
-  };
-
-  const getCorrectAnswer = (expr) => {
-    let correctAnswerData = '';
-    correctAnswerData = calculateCorrectAnswer(expr).toString();
-    return correctAnswerData;
-  };
-  return {
-    getDataForQuestion,
-    getCorrectAnswer,
-    getGameCondition,
-  };
-};
-
 const runBrainCalc = () => {
-  playGame(calcGame());
+  playGame('calcGame');
 };
 
 export default runBrainCalc;

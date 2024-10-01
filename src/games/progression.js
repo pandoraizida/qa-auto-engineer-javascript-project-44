@@ -1,5 +1,5 @@
 import playGame from '../index.js';
-import rundomNumber from '../helper.js';
+import { rundomNumber } from '../helper.js';
 
 const step = 5;
 const rowLength = 10;
@@ -28,30 +28,8 @@ export const getMissedNumber = (expr) => {
   return result;
 };
 
-const progressionGame = () => {
-  const getGameCondition = () => {
-    console.log('What number is missing in the progression?');
-  };
-
-  const getDataForQuestion = () => {
-    const dataForQuestion = getNumberLine();
-    return dataForQuestion;
-  };
-
-  const getCorrectAnswer = (expr) => {
-    let correctAnswerData = '';
-    correctAnswerData = getMissedNumber(expr).toString();
-    return correctAnswerData;
-  };
-  return {
-    getDataForQuestion,
-    getCorrectAnswer,
-    getGameCondition,
-  };
-};
-
 const runBrainProgression = () => {
-  playGame(progressionGame());
+  playGame('progressionGame');
 };
 
 export default runBrainProgression;

@@ -1,5 +1,5 @@
 import playGame from '../index.js';
-import rundomNumber from '../helper.js';
+import { rundomNumber } from '../helper.js';
 
 export const getNumbers = () => {
   const numbersForQuestion = (`${rundomNumber(0, 100)} ${rundomNumber(0, 100)}`);
@@ -21,30 +21,8 @@ export const getGCD = (expr) => {
   return gcd;
 };
 
-const gcdGame = () => {
-  const getGameCondition = () => {
-    console.log('Find the greatest common divisor of given numbers.');
-  };
-
-  const getDataForQuestion = () => {
-    const dataForQuestion = getNumbers();
-    return dataForQuestion;
-  };
-
-  const getCorrectAnswer = (expr) => {
-    let correctAnswerData = '';
-    correctAnswerData = getGCD(expr).toString();
-    return correctAnswerData;
-  };
-  return {
-    getDataForQuestion,
-    getCorrectAnswer,
-    getGameCondition,
-  };
-};
-
 const runBrainGcd = () => {
-  playGame(gcdGame());
+  playGame('gcdGame');
 };
 
 export default runBrainGcd;

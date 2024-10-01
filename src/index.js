@@ -1,19 +1,19 @@
 import readlineSync from 'readline-sync';
+import { getGameCondition, getDataForQuestion, getCorrectAnswer } from './helper.js';
 
 const playGame = (game) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
 
-  game.getGameCondition();
-
+  getGameCondition(game);
   const countRound = 3;
   for (let i = 0; i < countRound; i += 1) {
-    const questionData = game.getDataForQuestion();
+    const questionData = getDataForQuestion(game);
     console.log(`Question: ${questionData}`);
 
     const userAnswer = readlineSync.question('Your answer: ');
-    const correctAnser = game.getCorrectAnswer(questionData);
+    const correctAnser = getCorrectAnswer(game, questionData);
 
     if (correctAnser === userAnswer) {
       console.log('Correct!');
