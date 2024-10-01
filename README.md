@@ -14,24 +14,24 @@ make brain-games
 ### Run brain-even game
 Open terminal and run the command: **brain-even** 
 
-[![asciicast](https://asciinema.org/a/2V9wVpqgR6HtZNXAZq1GclKza.svg)](https://asciinema.org/a/2V9wVpqgR6HtZNXAZq1GclKza)
+[![asciicast](https://asciinema.org/a/AJe9berdqMhLp0W0eXBLQrg8U.svg)](https://asciinema.org/a/AJe9berdqMhLp0W0eXBLQrg8U)
 
 ### Run brain-calc game
 Open terminal and run the command: **brain-calc** 
 
-[![asciicast](https://asciinema.org/a/DuVzjZXX71idOB903wIB3CCrn.svg)](https://asciinema.org/a/DuVzjZXX71idOB903wIB3CCrn)
+[![asciicast](https://asciinema.org/a/vnxgcZHmuiu1CQEoTHDbw2yKQ.svg)](https://asciinema.org/a/vnxgcZHmuiu1CQEoTHDbw2yKQ)
 
 ### Run brain-gcd game
 Open terminal and run the command: **brain-gcd** 
 
-[![asciicast](https://asciinema.org/a/M0QEq46vNScYHVKmgnU6TI9A7.svg)](https://asciinema.org/a/M0QEq46vNScYHVKmgnU6TI9A7)
+[![asciicast](https://asciinema.org/a/J7pLDLItZOhIPphQFQf9uE1eH.svg)](https://asciinema.org/a/J7pLDLItZOhIPphQFQf9uE1eH)
 
 ### Run brain-progression game
 Open terminal and run the command: **brain-progression** 
 
-[![asciicast](https://asciinema.org/a/LDBVHusgRzLGtOMeCji3rRi8a.svg)](https://asciinema.org/a/LDBVHusgRzLGtOMeCji3rRi8a)
+[![asciicast](https://asciinema.org/a/TPnoDkbzw1MhCWOfk0ttUGGAh.svg)](https://asciinema.org/a/TPnoDkbzw1MhCWOfk0ttUGGAh)
 
 ### Run brain-prime game
 Open terminal and run the command: **brain-prime** 
 
-[![asciicast](https://asciinema.org/a/5VxRJ1JFFxTYfG0jEnlNKEfny.svg)](https://asciinema.org/a/5VxRJ1JFFxTYfG0jEnlNKEfny)
+[![asciicast](https://asciinema.org/a/w0bAulFKHIfTjKsJ7HR3iPOtW.svg)](https://asciinema.org/a/w0bAulFKHIfTjKsJ7HR3iPOtW)
