@@ -7,7 +7,9 @@ const playGame = (game) => {
   console.log(`Hello, ${name}!`);
 
   getGameCondition(game);
+
   const countRound = 3;
+  let countOfCorrectAnswers = 0;
   for (let i = 0; i < countRound; i += 1) {
     const questionData = getDataForQuestion(game);
     console.log(`Question: ${questionData}`);
@@ -17,9 +19,13 @@ const playGame = (game) => {
 
     if (correctAnser === userAnswer) {
       console.log('Correct!');
+      countOfCorrectAnswers += 1;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnser}'.\n Let's try again, ${name}!`);
     }
+  }
+  if (countOfCorrectAnswers === 3) {
+    console.log(`Congratulations, ${name}!`);
   }
 };
 
