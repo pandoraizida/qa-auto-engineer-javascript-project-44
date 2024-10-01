@@ -22,6 +22,7 @@ const playGame = (game) => {
       countOfCorrectAnswers += 1;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnser}'.\n Let's try again, ${name}!`);
+      return;
     }
   }
   if (countOfCorrectAnswers === 3) {
