@@ -1,6 +1,7 @@
 import playGame from '../index.js';
+import rundomNumber from '../helper.js';
 
-export const isPrime = (num) => {
+const isPrime = (num) => {
   if (num <= 1) {
     return false;
   }
@@ -12,8 +13,19 @@ export const isPrime = (num) => {
   return true;
 };
 
+const gameCondition = () => {
+  const gameConditionText = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  return gameConditionText;
+};
+
+const primeGame = () => {
+  const dataForQuestion = rundomNumber(0, 100);
+  const correctAnswerData = (isPrime(Number(dataForQuestion)) === true) ? 'yes' : 'no';
+  return [dataForQuestion, correctAnswerData];
+};
+
 const runBrainPrime = () => {
-  playGame('primeGame');
+  playGame(gameCondition, primeGame);
 };
 
 export default runBrainPrime;
