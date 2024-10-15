@@ -1,14 +1,13 @@
 import playGame from '../index.js';
 import rundomNumber from '../helper.js';
 
-const gameCondition = () => {
-  const gameConditionText = 'Answer "yes" if the number is even, otherwise answer "no".';
-  return gameConditionText;
-};
+const gameCondition = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const isEven = (expr) => ((expr % 2 === 0) ? 'yes' : 'no');
 
 const evenGame = () => {
   const dataForQuestion = (rundomNumber(0, 100)).toString();
-  const correctAnswerData = ((dataForQuestion % 2 === 0) ? 'yes' : 'no');
+  const correctAnswerData = isEven(dataForQuestion);
   return [dataForQuestion, correctAnswerData];
 };
 

@@ -1,6 +1,8 @@
 import playGame from '../index.js';
 import rundomNumber from '../helper.js';
 
+const gameCondition = 'What is the result of the expression?';
+
 const rundomOperator = () => {
   const operatorPool = ['+', '-', '*'];
   const rand = operatorPool[Math.floor(Math.random() * operatorPool.length)];
@@ -12,28 +14,22 @@ const getExpression = () => {
   return expression;
 };
 
-const calculateCorrectAnswer = (expr) => {
+const calculate = (operator, i, j) => {
   const actions = {
     '+': (a, b) => a + b,
     '-': (a, b) => a - b,
     '*': (a, b) => a * b,
   };
   const operators = Object.keys(actions);
-  let result = 0;
-  let mass = [];
-  for (let i = 0; i < operators.length; i += 1) {
-    mass = expr.split(operators[i]);
-    if (mass.length > 1) {
-      result = actions[operators[i]](Number(mass[0]), Number(mass[1]));
-      break;
-    }
+  if (operators.indexOf(operator) < 0) {
+    return null;
   }
-  return result;
+  return actions[operator](i, j);
 };
 
-const gameCondition = () => {
-  const gameConditionText = 'What is the result of the expression?';
-  return gameConditionText;
+const calculateCorrectAnswer = (expr) => {
+  const mass = expr.split(' ');
+  return calculate(mass[1], Number(mass[0]), Number(mass[2]));
 };
 
 const calcGame = () => {

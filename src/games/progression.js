@@ -3,6 +3,7 @@ import rundomNumber from '../helper.js';
 
 const step = 5;
 const rowLength = 10;
+const gameCondition = 'What number is missing in the progression?';
 
 const getNumberLine = () => {
   let number = rundomNumber(0, 100);
@@ -11,8 +12,13 @@ const getNumberLine = () => {
     mass.push(number);
     number += step;
   }
-  mass[(rundomNumber(0, rowLength - 1))] = '..';
-  const result = mass.join(' ');
+  return mass;
+};
+
+const getHideNumberLine = () => {
+  const numberLine = getNumberLine();
+  numberLine[(rundomNumber(0, rowLength - 1))] = '..';
+  const result = numberLine.join(' ');
   return result;
 };
 
@@ -28,13 +34,8 @@ const getMissedNumber = (expr) => {
   return result;
 };
 
-const gameCondition = () => {
-  const gameConditionText = 'What number is missing in the progression?';
-  return gameConditionText;
-};
-
 const progressionGame = () => {
-  const dataForQuestion = getNumberLine();
+  const dataForQuestion = getHideNumberLine();
   const correctAnswerData = getMissedNumber(dataForQuestion).toString();
   return [dataForQuestion, correctAnswerData];
 };

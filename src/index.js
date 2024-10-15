@@ -5,8 +5,7 @@ const playGame = (condition, game) => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
 
-  const gameCondition = condition();
-  console.log(gameCondition);
+  console.log(condition);
 
   const countRound = 3;
   for (let i = 1; i <= countRound; i += 1) {

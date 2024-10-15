@@ -1,6 +1,8 @@
 import playGame from '../index.js';
 import rundomNumber from '../helper.js';
 
+const gameCondition = 'Find the greatest common divisor of given numbers.';
+
 const getNumbers = () => {
   const numbersForQuestion = (`${rundomNumber(0, 100)} ${rundomNumber(0, 100)}`);
   return numbersForQuestion;
@@ -19,11 +21,6 @@ const getGCD = (expr) => {
   }
   const gcd = a + b;
   return gcd;
-};
-
-const gameCondition = () => {
-  const gameConditionText = 'Find the greatest common divisor of given numbers.';
-  return gameConditionText;
 };
 
 const gcdGame = () => {
