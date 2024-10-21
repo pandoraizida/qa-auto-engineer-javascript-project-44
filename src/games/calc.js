@@ -14,7 +14,7 @@ const getExpression = () => {
   return expression;
 };
 
-const calculate = (operator, i, j) => {
+const calculate = (operator, num1, num2) => {
   const actions = {
     '+': (a, b) => a + b,
     '-': (a, b) => a - b,
@@ -24,7 +24,7 @@ const calculate = (operator, i, j) => {
   if (operators.indexOf(operator) < 0) {
     return null;
   }
-  return actions[operator](i, j);
+  return actions[operator](num1, num2);
 };
 
 const calculateCorrectAnswer = (expr) => {
